@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "soiling-loss-calc"
+version = "0.1.0"
+description = "Estimate PV soiling energy/revenue losses and compare cleaning schedules and anti-soiling coatings"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Mohammad Ghadimimehr" }]
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21", "pandas>=1.3"]
+keywords = ["photovoltaic", "solar", "soiling", "cleaning", "PV"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+dev = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/mqadimimehr-hash/soiling-loss-calc"
+
+[project.scripts]
+soiling = "soiling.cli:main"
+
+[tool.setuptools]
+packages = ["soiling"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
